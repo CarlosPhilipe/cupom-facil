@@ -1,7 +1,7 @@
 # cupomFacil
 
 ### Inicializando a base de dados
-* Abrir um terminar e executar `mongod`
+* Seguir o tutorial de instalação do mongoDB (No Ubuntu: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ ou no Windows: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/) e inicializá-lo
 
 ### Como instalar e usar a API
 * Ir dentro da pasta `backend` e abrir um terminal
