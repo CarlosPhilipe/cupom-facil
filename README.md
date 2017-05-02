@@ -1,5 +1,8 @@
 # cupomFacil
 
+### Inicializando a base de dados
+* Abrir um terminar e executar `mongod`
+
 ### Como instalar e usar a API
 * Ir dentro da pasta `backend` e abrir um terminal
 * Executar `npm install`
