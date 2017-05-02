@@ -6,13 +6,13 @@
 * Executar `npm run dev`
 * Pronto! A API já está rodando. Para fazer testes, ir ao postman e no campo de texto colocar `localhost:3003/api/person/`.
 Isso permitirá que você use a rota, que possui os seguintes métodos implementados: **GET**, **GET** w/ ID, **POST**, **PUT**.
-* Observação: Para executar o **POST** e/ou **PUT**, o body necessário é: 
+* Observação: Para executar o **POST** e/ou **PUT**, o modelo de `body` necessário é: 
 ```javascript
 firstName: Saymon
 lastName: Souza
-cpf: 01583196218
-dob: 31031994
-phone: 991877780
+cpf: 12345678910
+dob: 05022017
+phone: 12345679
 ```
 
 
