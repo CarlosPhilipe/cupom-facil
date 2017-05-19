@@ -1,5 +1,5 @@
 const express = require('express')
-const cliente = require('../api/clientes/')
+const cliente = require('../api/controller/clientes/')
 
 module.exports = function(server, connection) {
 

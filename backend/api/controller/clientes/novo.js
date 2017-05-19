@@ -1,4 +1,21 @@
+const Cliente = require('../../model/Cliente');
 module.exports = function novo(req, res) {
-  
-  res.send('novo Cliente');
+  console.log("NOVO CLiente");
+  console.log(req.params);
+
+
+
+  // you can also build, save and access the object with chaining:
+    // Cliente.build({
+    //    cli_nome: 'foo',
+    //    cli_email: 'bar'
+    //  })
+    // .save()
+    // .then(anotherTask => {
+    //   res.send('Sucesso ');
+    // })
+    // .catch(error => {
+    //   // Ooops, do some error-handling
+    //   res.send('Error ');
+    // })
 }

@@ -1,4 +1,4 @@
-const Cliente = require('../model/Cliente');
+const Cliente = require('../../model/Cliente');
 module.exports = function buscarTodos(req, res) {
 
   // you can also build, save and access the object with chaining:
