@@ -1,4 +1,4 @@
-var Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 const sequelize = new Sequelize('cupom_facil', 'root', 'root', {
   host: 'localhost',
   dialect: 'mysql',
@@ -11,4 +11,4 @@ const sequelize = new Sequelize('cupom_facil', 'root', 'root', {
 
 });
 
-module.exports = sequelize;
+module.exports = {sequelize,Sequelize};

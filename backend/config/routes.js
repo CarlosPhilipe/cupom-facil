@@ -1,14 +1,14 @@
 const express = require('express')
 const cliente = require('../api/clientes/')
 
-module.exports = function(server, sequelize) {
+module.exports = function(server, connection) {
 
-	sequelize.authenticate()
+	connection.sequelize.authenticate()
   .then(err => {
-    console.log('Connection has been established successfully.');
+    console.log('Conexão foi estabelecida com sucesso.');
   })
   .catch(err => {
-    console.error('Unable to connect to the database:', err);
+    console.error('Não foi possível conectar ao banco de dados:', err);
   });
 
 	// API Routes

@@ -1,5 +1,5 @@
 const server = require('./config/server')
-const sequelize =  require('./config/database.js')
-require('./config/routes')(server,sequelize)
+const connection =  require('./config/database')
+require('./config/routes')(server,connection)
 
 module.exports = server;
