@@ -1,6 +1,6 @@
 const express = require('express')
+// Acessível dentro da pasta controller
 const cliente = require('../api/controller/clientes/')
-
 module.exports = function(server, connection) {
 
 	connection.sequelize.authenticate()
