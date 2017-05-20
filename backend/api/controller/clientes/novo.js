@@ -1,6 +1,12 @@
+// CHAMADA ao mecanismo de conexão
 const Cliente = require('../../model/Cliente');
+// método chamado no post do cliente
+// /cliente
 module.exports = function novo(req, res) {
-  // you can also build, save and access the object with chaining:
+    /*
+    Constroi o objeto;
+    depois salva;
+    */
     Cliente.build({
        cli_nome: req.body.cli_nome,
        cli_email: req.body.cli_email,
@@ -11,11 +17,12 @@ module.exports = function novo(req, res) {
        cli_ativo: req.body.cli_ativo
      })
     .save()
-    .then(anotherTask => {
-      res.send('Sucesso ');
+    .then(result => {
+      // em caso de sucesso
+      res.send(`{"mensagem":"ok"}`);
     })
     .catch(error => {
-      // Ooops, do some error-handling
-      res.send('Error ');
+      // em caso de erro
+      res.send(`{"mensagem":"erro","tipo":"${error}"}`);
     })
 }
