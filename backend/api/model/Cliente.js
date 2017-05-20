@@ -1,4 +1,6 @@
+// CHAMADA ao mecanismo de conexão
 const connection = require('../../config/database');
+//Model da classe cliente
 const Cliente = connection.sequelize.define('clientes', {
     cli_nome: {
       type: connection.Sequelize.STRING(70)
@@ -23,7 +25,7 @@ const Cliente = connection.sequelize.define('clientes', {
     },
     cli_dt_criacao: {
       type: connection.Sequelize.DATE,
-      defaultValue: connection.Sequelize.NOW 
+      defaultValue: connection.Sequelize.NOW
     },
     cli_dt_ult_alteracao: {
       type: connection.Sequelize.DATE,
