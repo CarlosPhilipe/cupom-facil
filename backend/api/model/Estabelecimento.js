@@ -54,4 +54,4 @@ const Estabelecimento = connection.sequelize.define('estabelecimentos', {
   },{timestamps: false}
 );
 
-module.exports = Cliente;
+module.exports = Estabelecimento;
