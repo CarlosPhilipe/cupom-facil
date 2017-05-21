@@ -46,7 +46,7 @@ const Estabelecimento = connection.sequelize.define('estabelecimentos', {
       type: connection.Sequelize.DATE,
       defaultValue: connection.Sequelize.NOW
     },
-    est_dt_ult_alteracao: {
+    est_ativo: {
       type: connection.Sequelize.BOOLEAN,
       allowNull: false,
       defaultValue: true
