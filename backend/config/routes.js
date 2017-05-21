@@ -1,6 +1,8 @@
 const express = require('express')
 // Acessível dentro da pasta controller
 const cliente = require('../api/controller/clientes/')
+const estabelecimento = require('../api/controller/estabelecimentos/')
+
 module.exports = function(server, connection) {
 
 	connection.sequelize.authenticate()
@@ -21,6 +23,13 @@ module.exports = function(server, connection) {
 	server.get('/cliente/:id', cliente.buscar);
 	server.put('/cliente/:id', cliente.alterar);
 	server.delete('/cliente/:id', cliente.excluir);
+
+	// estabelecimento
+	server.post('/estabelecimento', estabelecimento.novo);
+	server.get('/estabelecimento', estabelecimento.buscarTodos);
+	server.get('/estabelecimento/:id', estabelecimento.buscar);
+	server.put('/estabelecimento/:id', estabelecimento.alterar);
+	server.delete('/estabelecimento/:id', estabelecimento.excluir);
 
 	// Rotas de cliente da API
 	const person = require('../api/person/personService')
