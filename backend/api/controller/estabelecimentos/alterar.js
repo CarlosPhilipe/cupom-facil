@@ -5,15 +5,15 @@ const Estabelecimento = require('../../model/Estabelecimento');
 module.exports = function alterar(req, res) {
 
   Estabelecimento.update({
-    est_nome: req.body.est_key,
-    est_email: req.body.est_key,
-    est_hashsenha: req.body.est_key,
-    est_logo: req.body.est_key,
-    est_cep: req.body.est_key,
-    est_bairro: req.body.est_key,
-    est_rua: req.body.est_key,
-    est_numero: req.body.est_key,
-    est_complemento: req.body.est_key,
+    est_nome: req.body.est_nome,
+    est_email: req.body.est_email,
+    est_hashsenha: req.body.est_hashsenha,
+    est_logo: req.body.est_logo,
+    est_cep: req.body.est_cep,
+    est_bairro: req.body.est_bairro,
+    est_rua: req.body.est_rua,
+    est_numero: req.body.est_numero,
+    est_complemento: req.body.est_complemento,
   },{
     where: {
       id: req.params.id
