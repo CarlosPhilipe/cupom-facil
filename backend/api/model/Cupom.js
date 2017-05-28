@@ -6,10 +6,13 @@ const Cupom = connection.sequelize.define('cupons', {
       type: connection.Sequelize.BOOLEAN
     },
     cup_dt_criacao: {
-      type: connection.Sequelize.DATE,
-      validate:{
-        isEmail: true
-      }
+      type: connection.Sequelize.DATE
+    },
+    cup_dt_ult_alteracao: {
+      type: connection.Sequelize.DATE
+    },
+    cup_ativo: {
+      type: connection.Sequelize.BOOLEAN
     },
     cliente_id_cli: {
       type: connection.Sequelize.INTEGER

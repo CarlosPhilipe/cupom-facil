@@ -1,8 +1,10 @@
-const express = require('express')
+const express = require('express');
 // Acessível dentro da pasta controller
-const cliente = require('../api/controller/clientes/')
-const estabelecimento = require('../api/controller/estabelecimentos/')
-const promocao = require('../api/controller/promocoes/')
+const cliente = require('../api/controller/clientes/');
+const estabelecimento = require('../api/controller/estabelecimentos/');
+const promocao = require('../api/controller/promocoes/');
+const cupom = require('../api/controller/cupons/');
+
 
 module.exports = function(server, connection) {
 
@@ -38,6 +40,13 @@ module.exports = function(server, connection) {
 	server.get('/promocao/:id', promocao.buscar);
 	server.put('/promocao/:id', promocao.alterar);
 	server.delete('/promocao/:id', promocao.excluir);
+
+	// promocoes
+	server.post('/cupom', cupom.novo);
+	server.get('/cupom', cupom.buscarTodos);
+	server.get('/cupom/:id', cupom.buscar);
+	server.put('/cupom/:id', cupom.alterar);
+	server.delete('/cupom/:id', cupom.excluir);
 
 	// Rotas de cliente da API
 	const person = require('../api/person/personService')
