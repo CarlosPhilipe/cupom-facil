@@ -2,6 +2,7 @@ const express = require('express')
 // Acessível dentro da pasta controller
 const cliente = require('../api/controller/clientes/')
 const estabelecimento = require('../api/controller/estabelecimentos/')
+const promocao = require('../api/controller/promocoes/')
 
 module.exports = function(server, connection) {
 
@@ -30,6 +31,13 @@ module.exports = function(server, connection) {
 	server.get('/estabelecimento/:id', estabelecimento.buscar);
 	server.put('/estabelecimento/:id', estabelecimento.alterar);
 	server.delete('/estabelecimento/:id', estabelecimento.excluir);
+
+	// promocoes
+	server.post('/promocao', promocao.novo);
+	server.get('/promocao', promocao.buscarTodos);
+	server.get('/promocao/:id', promocao.buscar);
+	server.put('/promocao/:id', promocao.alterar);
+	server.delete('/promocao/:id', promocao.excluir);
 
 	// Rotas de cliente da API
 	const person = require('../api/person/personService')
