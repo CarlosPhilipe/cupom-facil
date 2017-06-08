@@ -25,4 +25,4 @@ const Cupom = connection.sequelize.define('cupons', {
   }
 );
 
-module.exports = Cliente;
+module.exports = Cupom;
