@@ -4,7 +4,7 @@ const Estabelecimento = require('../../model/Estabelecimento');
 // /cliente/:id
 module.exports = function excluir(req, res) {
   Estabelecimento.update({
-    cli_ativo: false,
+    est_ativo : false,
   },{
     where: {
       id: req.params.id

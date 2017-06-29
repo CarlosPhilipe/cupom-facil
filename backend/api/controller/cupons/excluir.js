@@ -4,7 +4,7 @@ const Cupom = require('../../model/Cupom');
 // /cliente/:id
 module.exports = function excluir(req, res) {
   Cupom.update({
-    cli_ativo: false,
+    cup_ativo: false,
   },{
     where: {
       id: req.params.id

@@ -12,7 +12,6 @@ module.exports = function alterar(req, res) {
     pro_validade: req.body.pro_validade,
     pro_valor: req.body.pro_valor,
     pro_qtd_cupom: req.body.pro_qtd_cupom,
-    pro_ativo: req.body.pro_ativo,
     estabelecimento_id_est: req.body.estabelecimento_id_est
   },{
     where: {
