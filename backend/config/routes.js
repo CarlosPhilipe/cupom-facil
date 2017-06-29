@@ -3,12 +3,12 @@ const express = require('express');
 const cliente = require('../api/controller/clientes/');
 const estabelecimento = require('../api/controller/estabelecimentos/');
 const promocao = require('../api/controller/promocoes/');
+const teste = require('../api/controller/testes/');
 //const cupom = require('../api/controller/cupons/');
-
 
 /*---------------Autenticação ----------------------------*/
 const Cliente = require('../api/model/Cliente');
- 
+
 var jwt = require('jsonwebtoken');
 
 var passport = require("passport");
@@ -57,11 +57,11 @@ module.exports = function(server, connection) {
 
 
 	// cliente
-	server.post('/cliente', cliente.novo);
-	server.get('/cliente', cliente.buscarTodos);
-	server.get('/cliente/:id', cliente.buscar);
-	server.put('/cliente/:id', cliente.alterar);
-	server.delete('/cliente/:id', cliente.excluir);
+	server.post('/:key/cliente', cliente.novo);
+	server.get('/:key/cliente', cliente.buscarTodos);
+	server.get('/:key/cliente/:id', cliente.buscar);
+	server.put('/:key/cliente/:id', cliente.alterar);
+	server.delete('/:key/cliente/:id', cliente.excluir);
 
 	// estabelecimento
 	server.post('/estabelecimento', estabelecimento.novo);
@@ -76,6 +76,9 @@ module.exports = function(server, connection) {
 	server.get('/promocao/:id', promocao.buscar);
 	server.put('/promocao/:id', promocao.alterar);
 	server.delete('/promocao/:id', promocao.excluir);
+
+
+  	server.get('/teste/zonadetestes', teste.zonadetestes);
 
 	// promocoes
 	// server.post('/cupom', cupom.novo);

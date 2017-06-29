@@ -3,6 +3,7 @@ const Cliente = require('../../model/Cliente');
 // método chamado no post do cliente
 // /cliente
 module.exports = function novo(req, res) {
+    var key = req.params.key;
     /*
     Constroi o objeto;
     depois salva;
@@ -14,7 +15,8 @@ module.exports = function novo(req, res) {
        cli_token_reset_senha:req.body.cli_token_reset_senha,
        cli_dt_nascimento: req.body.cli_dt_nascimento,
        cli_sexo: req.body.cli_sexo,
-       cli_ativo: req.body.cli_ativo
+       cli_ativo: req.body.cli_ativo,
+       est_key: key,
      })
     .save()
     .then(result => {
