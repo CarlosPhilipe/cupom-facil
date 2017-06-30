@@ -4,7 +4,7 @@ const cliente = require('../api/controller/clientes/');
 const estabelecimento = require('../api/controller/estabelecimentos/');
 const promocao = require('../api/controller/promocoes/');
 const teste = require('../api/controller/testes/');
-//const cupom = require('../api/controller/cupons/');
+const cupom = require('../api/controller/cupons/');
 
 /*---------------Autenticação ----------------------------*/
 // var jwt = require('jsonwebtoken');
@@ -52,16 +52,16 @@ module.exports = function(server, connection) {
 	const router = express.Router()
 	server.use('/api', router)
 	//server.use(passport.initialize());
-
+	server.get('/teste/zonadetestes', teste.zonadetestes);
 
 	// cliente
+	server.post('/login', cliente.login);
+
 	server.post('/:key/cliente', cliente.novo);
 	server.get('/:key/cliente', cliente.buscarTodos);
 	server.get('/:key/cliente/:id', cliente.buscar);
 	server.put('/:key/cliente/:id', cliente.alterar);
 	server.delete('/:key/cliente/:id', cliente.excluir);
-  server.post('/login', cliente.login);
-
 
 	// estabelecimento
 	server.post('/estabelecimento', estabelecimento.novo);
@@ -77,15 +77,13 @@ module.exports = function(server, connection) {
 	server.put('/promocao/:id', promocao.alterar);
 	server.delete('/promocao/:id', promocao.excluir);
 
-
-  	server.get('/teste/zonadetestes', teste.zonadetestes);
-
 	// promocoes
-	// server.post('/cupom', cupom.novo);
-	// server.get('/cupom', cupom.buscarTodos);
-	// server.get('/cupom/:id', cupom.buscar);
-	// server.put('/cupom/:id', cupom.alterar);
-	// server.delete('/cupom/:id', cupom.excluir);
+	server.post('/cupom', cupom.novo);
+	server.get('/cupom', cupom.buscarTodos);
+	server.get('/cupom/:id', cupom.buscar);
+	server.put('/cupom/:id', cupom.alterar);
+	server.delete('/cupom/:id', cupom.excluir);
+	server.post('/cupom/:id/usar', cupom.usar);
 
 	//autenticacoes
 	// server.post('/login', function (req, res) {

@@ -5,5 +5,5 @@ module.exports = function zonadetestes(req, res) {
 
   //  console.log(Util.getDate());
 
-    res.send(Util().buildKeyFromName());
+    res.send(Util().getDate());
 }
