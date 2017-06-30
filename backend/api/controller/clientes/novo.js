@@ -4,6 +4,8 @@ const Cliente = require('../../model/Cliente');
 // /cliente
 module.exports = function novo(req, res) {
     var key = req.params.key;
+
+    console.log(key);
     /*
     Constroi o objeto;
     depois salva;
@@ -16,7 +18,7 @@ module.exports = function novo(req, res) {
        cli_dt_nascimento: req.body.cli_dt_nascimento,
        cli_sexo: req.body.cli_sexo,
        cli_ativo: req.body.cli_ativo,
-       est_key: key,
+       est_key: req.params.key,
      })
     .save()
     .then(result => {

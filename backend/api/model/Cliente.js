@@ -35,6 +35,9 @@ const Cliente = connection.sequelize.define('clientes', {
       type: connection.Sequelize.BOOLEAN,
       allowNull: false,
       defaultValue: true
+    },
+    est_key: {
+      type: connection.Sequelize.STRING(45)
     }
   },{timestamps: false}
 );
