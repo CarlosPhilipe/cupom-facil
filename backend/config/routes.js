@@ -1,10 +1,10 @@
-const express = require('express');
+const express 				= require('express');
 // Acessível dentro da pasta controller
-const cliente = require('../api/controller/clientes/');
+const cliente 				= require('../api/controller/clientes/');
 const estabelecimento = require('../api/controller/estabelecimentos/');
-const promocao = require('../api/controller/promocoes/');
-const teste = require('../api/controller/testes/');
-const cupom = require('../api/controller/cupons/');
+const promocao 				= require('../api/controller/promocoes/');
+const teste 					= require('../api/controller/testes/');
+const cupom 					= require('../api/controller/cupons/');
 
 /*---------------Autenticação ----------------------------*/
 // var jwt = require('jsonwebtoken');
@@ -52,7 +52,7 @@ module.exports = function(server, connection) {
 	const router = express.Router()
 	server.use('/api', router)
 	//server.use(passport.initialize());
-	server.get('/teste/zonadetestes', teste.zonadetestes);
+	server.get('/teste/zonadetestes/:id', teste.zonadetestes);
 
 	// cliente
 	server.post('/login', cliente.login);
@@ -107,10 +107,8 @@ module.exports = function(server, connection) {
 	//   res.json({message: "Success! You can not see this without a token"});
 	// });
 
-
 	// Rotas de cliente da API
 	const person = require('../api/person/personService')
 	person.register(router, '/person')
-
 
 }
