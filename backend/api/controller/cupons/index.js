@@ -2,6 +2,8 @@
 var cupom = [];
 cupom.novo          = require("./novo.js");       // POST
 cupom.buscarTodos   = require("./buscarTodos.js");// GET
+cupom.buscarPorCliente  = require("./buscarPorCliente.js");// GET
+cupom.buscarPorPromocao  = require("./buscarPorPromocao.js");// GET
 cupom.buscar        = require("./buscar.js");     // GET CIM ID
 cupom.alterar       = require("./alterar.js");    // PUT
 cupom.excluir       = require("./excluir.js");    // DELETE

@@ -52,7 +52,7 @@ module.exports = function(server, connection) {
 	const router = express.Router()
 	server.use('/api', router)
 	//server.use(passport.initialize());
-	server.get('/teste/zonadetestes/:id', teste.zonadetestes);
+	server.get('/:key/teste/zonadetestes/:codigo', teste.zonadetestes);
 
 	// cliente
 	server.post('/login', cliente.login);
@@ -81,6 +81,8 @@ module.exports = function(server, connection) {
 	server.post('/cupom', cupom.novo);
 	server.get('/cupom', cupom.buscarTodos);
 	server.get('/cupom/:id', cupom.buscar);
+	server.get('/cupom/:id/cliente', cupom.buscarPorCliente);
+	server.get('/cupom/:id/promocao', cupom.buscarPorPromocao);
 	server.put('/cupom/:id', cupom.alterar);
 	server.delete('/cupom/:id', cupom.excluir);
 	server.post('/cupom/:id/usar', cupom.usar);
