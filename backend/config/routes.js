@@ -4,41 +4,14 @@ const cliente = require('../api/controller/clientes/');
 const estabelecimento = require('../api/controller/estabelecimentos/');
 const promocao = require('../api/controller/promocoes/');
 const teste = require('../api/controller/testes/');
+
+
+var Cliente = require("./../api/model/Cliente");
+
 //const cupom = require('../api/controller/cupons/');
 
-/*---------------Autenticação ----------------------------*/
-// var jwt = require('jsonwebtoken');
-// var passport = require("passport");
-// var passportJWT = require("passport-jwt");
-//
-//
-// var ExtractJwt = passportJWT.ExtractJwt;
-// var JwtStrategy = passportJWT.Strategy;
-//
-// var jwtOptions = {}
-// jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeader();
-// jwtOptions.secretOrKey = 'everybodyneedtheCesarasteacher';
-//
-// var strategy = new JwtStrategy(jwtOptions, function(jwt_payload, next) {
-//   console.log('payload received', jwt_payload);
-//   Cliente.findAll({
-//     where: {
-//       id: jwt_payload.id
-//     }
-//
-//   }).then(result => {
-//     next(null, result);
-//
-//   }).catch(error => {
-//     next(null, false);
-//   })
-// });
 
-//passport.use(strategy);
-
-/*---------------------------------------------------------*/
-
-module.exports = function(server, connection) {
+module.exports = function(server, connection, auth) {
 
 	connection.sequelize.authenticate()
   .then(err => {
@@ -60,7 +33,7 @@ module.exports = function(server, connection) {
 	server.get('/:key/cliente/:id', cliente.buscar);
 	server.put('/:key/cliente/:id', cliente.alterar);
 	server.delete('/:key/cliente/:id', cliente.excluir);
-  server.post('/login', cliente.login);
+  	server.post('/login', cliente.login);
 
 
 	// estabelecimento
@@ -78,7 +51,7 @@ module.exports = function(server, connection) {
 	server.delete('/promocao/:id', promocao.excluir);
 
 
-  	server.get('/teste/zonadetestes', teste.zonadetestes);
+  //	server.get('/teste/zonadetestes', teste.zonadetestes);
 
 	// promocoes
 	// server.post('/cupom', cupom.novo);
@@ -88,26 +61,30 @@ module.exports = function(server, connection) {
 	// server.delete('/cupom/:id', cupom.excluir);
 
 	//autenticacoes
-	// server.post('/login', function (req, res) {
-	// 	Cliente.findAll({
-	// 		where: {
-	// 		cli_email: req.body.cli_email,
-	// 		cli_hashsenha: req.body.cli_hashsenha
-	// 		}
-	// 	}).then(result => {
-	// 		var payload = {id: result.id};
-	// 		var token = jwt.sign(payload, jwtOptions.secretOrKey);
-	// 		res.json({message: "ok", token: token});
-	// 	}).catch(error => {
-	// 		res.status(401).json({message:"no such user found"});
-	// 	})
-  //
-	// });
+	/* server.post('/login', function (req, res) {
+	 	Cliente.findAll({
+	 		where: {
+	 		cli_email: req.body.cli_email,
+	 		cli_hashsenha: req.body.cli_hashsenha
+	 		}
+	 	}).then(result => {
+	 		if(result.length!=0){
+		 		var payload = {id: 1};
+		 		var token = auth.jwt.sign(payload, auth.jwtOptions.secretOrKey);
+		 		res.json({message: "ok", token: token});
+	 		}else{
+	 			res.status(401).json({message:"Ninguém encontrado!"});
+	 		}
+	 	}).catch(error => {
+	 		res.status(401).json({message:"Erro!"});
+	 	})
+  
+	 });*/
 
-	// server.get("/secret", passport.authenticate('jwt', { session: false }),
-	//  function(req, res){
-	//   res.json({message: "Success! You can not see this without a token"});
-	// });
+	 server.get("/secret", auth.passport.authenticate('jwt', { session: false }),
+	  function(req, res){
+	   res.json({message: "Success! You can not see this without a token"});
+	 });
 
 
 	// Rotas de cliente da API
