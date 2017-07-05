@@ -51,6 +51,8 @@ module.exports = function(server, connection) {
 	// API Routes
 	const router = express.Router()
 	server.use('/api', router)
+
+
 	//server.use(passport.initialize());
 	server.get('/:key/teste/zonadetestes/:codigo', teste.zonadetestes);
 
@@ -108,6 +110,11 @@ module.exports = function(server, connection) {
 	//  function(req, res){
 	//   res.json({message: "Success! You can not see this without a token"});
 	// });
+
+	server.use(function(req, res, next){
+		res.status(404);
+		res.send(`{"mensagem":"erro","tipo":"servico inexistente"}`);
+	});
 
 	// Rotas de cliente da API
 	const person = require('../api/person/personService')
