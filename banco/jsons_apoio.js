@@ -25,3 +25,11 @@
   "est_dt_ult_alteracao":"2017-05-25T16:10:59.000Z",
   "est_ativo":true
 }
+{
+  "cup_usado": 0,
+  "cup_dt_criacao": "2017-05-25T16:10:59.000Z",
+  "cup_dt_ult_alteracao": "2017-05-25T16:10:59.000Z",
+  "cup_ativo": 1,
+  "cliente_id_cli": 21,
+  "promocao_id_pro": 1
+}

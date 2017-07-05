@@ -1,5 +1,5 @@
 // CHAMADA ao mecanismo de conexão
-const connection = require('../../config/database');
+const connection      = require('../../config/database');
 //Model da classe cliente
 const Cliente = connection.sequelize.define('clientes', {
     cli_nome: {
