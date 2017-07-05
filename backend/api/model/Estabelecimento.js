@@ -51,21 +51,6 @@ const Estabelecimento = connection.sequelize.define('estabelecimentos', {
       allowNull: false,
       defaultValue: true
     }
-  },
-  {
-    getterMethods: {
-      getIdByKey(param_key) {
-        Estabelecimento.findOne({
-          where: {
-            est_key: param_key
-          },
-        }).then(result => {
-          // project will be the first entry of the Projects table with the title 'aProject' || null
-          // project.title will contain the name of the project
-          return result.id;
-        })
-      }
-    }
   },{timestamps: false}
 );
 

@@ -3,7 +3,7 @@ const Estabelecimento = require('../../model/Estabelecimento');
 // método chamado do get com patrametro
 // /cliente/:id
 module.exports = function buscar(req, res) {
-        Estabelecimento.findAll({
+        Estabelecimento.findOne({
           where: {
             id: req.params.id
           }
