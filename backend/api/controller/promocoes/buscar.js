@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Promocao = require('../../model/Promocao');
 // método chamado do get com patrametro
-// /cliente/:id
+// /promocao/:id
 module.exports = function buscar(req, res) {
         Promocao.findAll({
           where: {

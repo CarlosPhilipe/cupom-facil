@@ -1,76 +1,73 @@
 const express 				= require('express');
+
 // Acessível dentro da pasta controller
-const cliente 				= require('../api/controller/clientes/');
+const cliente 		  = require('../api/controller/clientes/');
 const estabelecimento = require('../api/controller/estabelecimentos/');
-var Cliente = require("./../api/model/Cliente");
+const usuario  		  = require('../api/controller/usuarios/');
+const promocao 		  = require('../api/controller/promocoes/');
+const cupom 		  = require('../api/controller/cupons/');
 
-//const cupom = require('../api/controller/cupons/');
-
-const promocao 				= require('../api/controller/promocoes/');
-const teste 					= require('../api/controller/testes/');
-const cupom 					= require('../api/controller/cupons/');
+const teste 		  = require('../api/controller/testes/');
 
 
 module.exports = function(server, connection, auth) {
 
 	connection.sequelize.authenticate()
-  .then(err => {
-    console.log('Conexão foi estabelecida com sucesso.');
-  })
-  .catch(err => {
-    console.error('Não foi possível conectar ao banco de dados:', err);
-  });
+    .then(err => {
+    	console.log('Conexão foi estabelecida com sucesso.');
+  	})
+    .catch(err => {
+    	console.error('Não foi possível conectar ao banco de dados:', err);
+    });
 
 	// API Routes
 	const router = express.Router()
-//	server.use('/api', router)
+	server.use(auth.passport.initialize());
 
-	//app.use('/api/route', passport.authenticate('bearer')
 
-	//server.use('/api', auth.passport.authenticate('jwt'), cliente.validar);
-
-	//Para as rotas que precisam de validação
+	//Utilizado para validação
 	server.use('/api', auth.passport.authenticate('jwt', { session: false }), router);
 
-	//server.use(passport.initialize());
 	server.get('/:key/teste/zonadetestes/:codigo', teste.zonadetestes);
 
+	// usuarios
+	server.post('/usuario', usuario.novo);
+	server.get('/api/usuario', usuario.buscarTodos);
+	server.get('/api/usuario/:id', usuario.buscar);
+	server.put('/api/usuario/:id', usuario.alterar);
+	server.delete('/api/usuario/:id', usuario.excluir);
+  	server.post('/login', usuario.login);
+
 	// cliente
-	server.post('/:key/cliente', cliente.novo);
-	server.get('/:key/cliente', cliente.buscarTodos);
-	server.get('/:key/cliente/:id', cliente.buscar);
-	server.put('/:key/cliente/:id', cliente.alterar);
-	server.delete('/:key/cliente/:id', cliente.excluir);
-  	server.post('/login', cliente.login);
-  	server.get('/api/validar', cliente.validar);
+	server.post('/api/:key/cliente', cliente.novo);
+	server.get('/api/:key/cliente', cliente.buscarTodos);
+	server.get('/api/:key/cliente/:id', cliente.buscar);
+	server.put('/api/:key/cliente/:id', cliente.alterar);
+	server.delete('/api/:key/cliente/:id', cliente.excluir);
 
 	// estabelecimento
-	server.post('/estabelecimento', estabelecimento.novo);
-	server.get('/estabelecimento', estabelecimento.buscarTodos);
-	server.get('/estabelecimento/:id', estabelecimento.buscar);
-	server.put('/estabelecimento/:id', estabelecimento.alterar);
-	server.delete('/estabelecimento/:id', estabelecimento.excluir);
+	server.post('/api/estabelecimento', estabelecimento.novo);
+	server.get('/api/estabelecimento', estabelecimento.buscarTodos);
+	server.get('/api/estabelecimento/:id', estabelecimento.buscar);
+	server.put('/api/estabelecimento/:id', estabelecimento.alterar);
+	server.delete('/api/estabelecimento/:id', estabelecimento.excluir);
 
 	// promocoes
-	server.post('/promocao', promocao.novo);
-	server.get('/promocao', promocao.buscarTodos);
-	server.get('/promocao/:id', promocao.buscar);
-	server.put('/promocao/:id', promocao.alterar);
-	server.delete('/promocao/:id', promocao.excluir);
-
-
-  //	server.get('/teste/zonadetestes', teste.zonadetestes);
-
+	server.post('/api/promocao', promocao.novo);
+	server.get('/api/promocao', promocao.buscarTodos);
+	server.get('/api/promocao/:id', promocao.buscar);
+	server.put('/api/promocao/:id', promocao.alterar);
+	server.delete('/api/promocao/:id', promocao.excluir);
 
 	// promocoes
-	server.post('/cupom', cupom.novo);
-	server.get('/cupom', cupom.buscarTodos);
-	server.get('/cupom/:id', cupom.buscar);
-	server.get('/cupom/:id/cliente', cupom.buscarPorCliente);
-	server.get('/cupom/:id/promocao', cupom.buscarPorPromocao);
-	server.put('/cupom/:id', cupom.alterar);
-	server.delete('/cupom/:id', cupom.excluir);
-	server.post('/cupom/:id/usar', cupom.usar);
+	server.post('/api/cupom', cupom.novo);
+	server.get('/api/cupom', cupom.buscarTodos);
+	server.get('/api/cupom/:id', cupom.buscar);
+	server.get('/api/cupom/:id/cliente', cupom.buscarPorCliente);
+	server.get('/api/cupom/:id/promocao', cupom.buscarPorPromocao);
+	server.put('/api/cupom/:id', cupom.alterar);
+	server.delete('/api/cupom/:id', cupom.excluir);
+	server.post('/api/cupom/:id/usar', cupom.usar);
 
 	server.use(function(req, res, next){
 		res.status(404);

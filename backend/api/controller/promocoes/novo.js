@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Promocao = require('../../model/Promocao');
 // método chamado no post do cliente
-// /cliente
+// /promocao
 module.exports = function novo(req, res) {
     /*
     Constroi o objeto;

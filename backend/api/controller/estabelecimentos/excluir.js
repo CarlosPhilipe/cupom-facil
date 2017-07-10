@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Estabelecimento = require('../../model/Estabelecimento');
 // método usado no delete de todos os clientes
-// /cliente/:id
+// /estabelecimento/:id
 module.exports = function excluir(req, res) {
   Estabelecimento.update({
     est_ativo : false,

@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Promocao = require('../../model/Promocao');
 // método usado no delete de todos os clientes
-// /cliente/:id
+// /promocao/:id
 module.exports = function excluir(req, res) {
   Promocao.update({
     pro_ativo: false,

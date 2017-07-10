@@ -1,12 +1,12 @@
-const Cliente = require('../../model/Cliente');
+const Usuario = require('../../model/Usuario');
 const auth = require('./../../../config/passport')
 
-// autenticacoes
+// /login
 module.exports = function login(req, res) {
-  Cliente.findAll({
+  Usuario.findAll({
     where: {
-    cli_email: req.body.cli_email,
-    cli_hashsenha: req.body.cli_hashsenha
+    usu_email: req.body.usu_email,
+    usu_hashsenha: req.body.usu_hashsenha
     }
   }).then(result =>
     {
@@ -19,7 +19,7 @@ module.exports = function login(req, res) {
       }
   }).catch(error =>
     {
-    res.status(401).json({message:"Nenhum usuario encontrado"});
+    res.status(401).json({message:"Login ou senha não existe"});
   })
 
 };

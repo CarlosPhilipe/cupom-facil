@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Estabelecimento = require('../../model/Estabelecimento');
 // método chamado no get de todos os clientes
-// /cliente
+// /estabelecimento
 module.exports = function buscarTodos(req, res) {
     Estabelecimento.findAll({
 

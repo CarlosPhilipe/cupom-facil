@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Cupom = require('../../model/Cupom');
 // método chamado no post do cliente
-// /cliente
+// /cupom
 module.exports = function novo(req, res) {
     /*
     Constroi o objeto;

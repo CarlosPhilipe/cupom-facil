@@ -5,8 +5,7 @@ const Cliente = require('../../model/Cliente');
 module.exports = function alterar(req, res) {
 
   Cliente.update({
-    cli_nome: req.body.cli_nome,
-    cli_hashsenha: req.body.cli_hashsenha,
+    usu_id: req.body.usu_id,
     cli_dt_nascimento: req.body.cli_dt_nascimento,
     cli_sexo: req.body.cli_sexo,
   },{

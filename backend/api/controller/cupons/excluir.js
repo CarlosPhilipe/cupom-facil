@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Cupom = require('../../model/Cupom');
 // método usado no delete de todos os clientes
-// /cliente/:id
+// /cupom/:id
 module.exports = function excluir(req, res) {
   Cupom.update({
     cup_ativo: false,

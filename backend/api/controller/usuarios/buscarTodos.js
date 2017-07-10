@@ -1,9 +1,9 @@
 // CHAMADA ao mecanismo de conexão
-const Promocao = require('../../model/Promocao');
+const Usuario = require('../../model/Usuario');
 // método chamado no get de todos os clientes
-// /promocao
+// /usuario
 module.exports = function buscarTodos(req, res) {
-    Promocao.findAll({
+    Usuario.findAll({
 
     }).then(result => {
         res.send(result);

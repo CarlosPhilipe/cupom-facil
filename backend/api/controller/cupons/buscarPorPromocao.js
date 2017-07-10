@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Cupom = require('../../model/Cupom');
 // método chamado do get com patrametro
-// /cliente/:id
+// /cupom/:id
 module.exports = function buscar(req, res) {
         Cupom.findAll({
           where: {

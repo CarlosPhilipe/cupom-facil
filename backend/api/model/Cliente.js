@@ -2,20 +2,8 @@
 const connection      = require('../../config/database');
 //Model da classe cliente
 const Cliente = connection.sequelize.define('clientes', {
-    cli_nome: {
-      type: connection.Sequelize.STRING(70)
-    },
-    cli_email: {
-      type: connection.Sequelize.STRING(70),
-      validate:{
-        isEmail: true
-      }
-    },
-    cli_hashsenha: {
-      type: connection.Sequelize.STRING(45)
-    },
-    cli_token_reset_senha: {
-      type: connection.Sequelize.STRING(45)
+    usu_id:{
+      type: connection.Sequelize.INTEGER(45)
     },
     cli_dt_nascimento: {
       type: connection.Sequelize.DATE
@@ -30,11 +18,6 @@ const Cliente = connection.sequelize.define('clientes', {
     cli_dt_ult_alteracao: {
       type: connection.Sequelize.DATE,
       defaultValue: connection.Sequelize.NOW
-    },
-    cli_ativo: {
-      type: connection.Sequelize.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
     },
     est_key: {
       type: connection.Sequelize.STRING(45)

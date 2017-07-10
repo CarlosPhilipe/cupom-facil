@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Promocao = require('../../model/Promocao');
 // método chamado no update dados do cliente
-// /cliente/:id
+// /promocao/:id
 module.exports = function alterar(req, res) {
 
   Promocao.update({

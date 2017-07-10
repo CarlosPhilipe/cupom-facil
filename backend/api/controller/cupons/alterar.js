@@ -1,7 +1,7 @@
 // CHAMADA ao mecanismo de conexão
 const Cupom = require('../../model/Cupom');
 // método chamado no update dados do cliente
-// /cliente/:id
+// /cupom/:id
 module.exports = function alterar(req, res) {
 
   Cupom.update({
