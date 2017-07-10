@@ -49,7 +49,7 @@ module.exports = function(server, connection, auth) {
 	server.delete('/api/:key/cliente/:id', cliente.excluir);
 
 	// estabelecimento
-	server.post('/api/estabelecimento', estabelecimento.novo);
+	server.post('/estabelecimento', estabelecimento.novo);
 	server.get('/api/estabelecimento', estabelecimento.buscarTodos);
 	server.get('/api/estabelecimento/:id', estabelecimento.buscar);
 	server.put('/api/estabelecimento/:id', estabelecimento.alterar);
