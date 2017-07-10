@@ -22,12 +22,15 @@ module.exports = function(server, connection, auth) {
 
 	// API Routes
 	const router = express.Router()
-	server.use(auth.passport.initialize());
-
 
 	//Utilizado para validação
 	server.use('/api', auth.passport.authenticate('jwt', { session: false }), router);
 
+	/*router.use(function(req, res, next) {
+	    console.log(req.method, res.statusCode, req.url);
+		next(); 
+	});
+*/
 	server.get('/:key/teste/zonadetestes/:codigo', teste.zonadetestes);
 
 	// usuarios

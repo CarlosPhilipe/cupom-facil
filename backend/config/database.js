@@ -8,6 +8,7 @@ const sequelize = new Sequelize('cupom_facil', 'root', 'root', {
     min: 0,
     idle: 10000
   },
+  logging: false
 
 });
 

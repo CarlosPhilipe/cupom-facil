@@ -11,7 +11,7 @@ jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeader();
 jwtOptions.secretOrKey = 'everybodyneedtheCesarasteacher';
 
 var strategy = new JwtStrategy(jwtOptions, function(jwt_payload, next) {
- console.log('payload received', jwt_payload);
+// console.log('payload received', jwt_payload);
  Usuario.findAll({
   where: {
      id: jwt_payload.id

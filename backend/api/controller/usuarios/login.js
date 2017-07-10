@@ -19,7 +19,7 @@ module.exports = function login(req, res) {
       }
   }).catch(error =>
     {
-    res.status(401).json({message:"Login ou senha não existe"});
+    res.status(401).json({message:"Nenhum usuario encontrado"});
   })
 
 };
