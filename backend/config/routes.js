@@ -28,49 +28,49 @@ module.exports = function(server, connection, auth) {
 
 	/*router.use(function(req, res, next) {
 	    console.log(req.method, res.statusCode, req.url);
-		next(); 
+		next();
 	});
 */
 	server.get('/:key/teste/zonadetestes/:codigo', teste.zonadetestes);
 
 	// usuarios
 	server.post('/usuario', usuario.novo);
-	server.get('/api/usuario', usuario.buscarTodos);
-	server.get('/api/usuario/:id', usuario.buscar);
-	server.put('/api/usuario/:id', usuario.alterar);
+	server.get('/usuario', usuario.buscarTodos);
+	server.get('/usuario/:id', usuario.buscar);
+	server.put('/usuario/:id', usuario.alterar);
 	server.delete('/api/usuario/:id', usuario.excluir);
-  	server.post('/login', usuario.login);
+  server.post('/login', usuario.login);
 
 	// cliente
-	server.post('/api/:key/cliente', cliente.novo);
-	server.get('/api/:key/cliente', cliente.buscarTodos);
-	server.get('/api/:key/cliente/:id', cliente.buscar);
-	server.put('/api/:key/cliente/:id', cliente.alterar);
-	server.delete('/api/:key/cliente/:id', cliente.excluir);
+	server.post('/:key/cliente', cliente.novo);
+	server.get('/:key/cliente', cliente.buscarTodos);
+	server.get('/:key/cliente/:id', cliente.buscar);
+	server.put('/:key/cliente/:id', cliente.alterar);
+	server.delete('/:key/cliente/:id', cliente.excluir);
 
 	// estabelecimento
 	server.post('/estabelecimento', estabelecimento.novo);
-	server.get('/api/estabelecimento', estabelecimento.buscarTodos);
-	server.get('/api/estabelecimento/:id', estabelecimento.buscar);
-	server.put('/api/estabelecimento/:id', estabelecimento.alterar);
-	server.delete('/api/estabelecimento/:id', estabelecimento.excluir);
+	server.get('/estabelecimento', estabelecimento.buscarTodos);
+	server.get('/estabelecimento/:id', estabelecimento.buscar);
+	server.put('/estabelecimento/:id', estabelecimento.alterar);
+	server.delete('/estabelecimento/:id', estabelecimento.excluir);
 
 	// promocoes
-	server.post('/api/promocao', promocao.novo);
-	server.get('/api/promocao', promocao.buscarTodos);
-	server.get('/api/promocao/:id', promocao.buscar);
-	server.put('/api/promocao/:id', promocao.alterar);
-	server.delete('/api/promocao/:id', promocao.excluir);
+	server.post('/promocao', promocao.novo);
+	server.get('/promocao', promocao.buscarTodos);
+	server.get('/promocao/:id', promocao.buscar);
+	server.put('/promocao/:id', promocao.alterar);
+	server.delete('/promocao/:id', promocao.excluir);
 
 	// promocoes
-	server.post('/api/cupom', cupom.novo);
-	server.get('/api/cupom', cupom.buscarTodos);
-	server.get('/api/cupom/:id', cupom.buscar);
-	server.get('/api/cupom/:id/cliente', cupom.buscarPorCliente);
-	server.get('/api/cupom/:id/promocao', cupom.buscarPorPromocao);
-	server.put('/api/cupom/:id', cupom.alterar);
-	server.delete('/api/cupom/:id', cupom.excluir);
-	server.post('/api/cupom/:id/usar', cupom.usar);
+	server.post('/cupom', cupom.novo);
+	server.get('/cupom', cupom.buscarTodos);
+	server.get('/cupom/:id', cupom.buscar);
+	server.get('/cupom/:id/cliente', cupom.buscarPorCliente);
+	server.get('/cupom/:id/promocao', cupom.buscarPorPromocao);
+	server.put('/cupom/:id', cupom.alterar);
+	server.delete('/cupom/:id', cupom.excluir);
+	server.post('/cupom/:id/usar', cupom.usar);
 
 	server.use(function(req, res, next){
 		res.status(404);

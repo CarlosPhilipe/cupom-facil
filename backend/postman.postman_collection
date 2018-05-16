@@ -1,0 +1,225 @@
+{
+	"id": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+	"name": "Cupom-Facil",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "cliente",
+			"description": "",
+			"collectionId": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"order": [
+				"8b9cfa81-d3dc-e06c-4cd0-4eae56a2497b",
+				"4709395a-2282-ad9e-be61-c7438b640c0a"
+			],
+			"owner": "876851",
+			"folders_order": [],
+			"id": "fc24ed8b-7ebd-ef83-1c43-de27031216c1"
+		},
+		{
+			"name": "estabelecimento",
+			"description": "",
+			"collectionId": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"order": [
+				"4ff02024-16b4-a41c-b06b-71e6a0c7a456",
+				"83cdb47e-0f88-1e3c-0f2c-803dd3a602a8"
+			],
+			"owner": "876851",
+			"folders_order": [],
+			"id": "8463033a-8d9b-34f7-3559-75c283a0c993"
+		},
+		{
+			"name": "usuario",
+			"description": "",
+			"collectionId": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"order": [
+				"e0142616-a3d6-c0dc-56f3-0e9a743ccbde",
+				"4d1a0f08-16f3-f668-be33-b35934b21497"
+			],
+			"owner": "876851",
+			"folders_order": [],
+			"id": "be9c45fc-8dc4-c983-66b7-e3d78c9b9307"
+		}
+	],
+	"folders_order": [
+		"be9c45fc-8dc4-c983-66b7-e3d78c9b9307",
+		"fc24ed8b-7ebd-ef83-1c43-de27031216c1",
+		"8463033a-8d9b-34f7-3559-75c283a0c993"
+	],
+	"timestamp": 1526436311669,
+	"owner": "876851",
+	"public": false,
+	"requests": [
+		{
+			"id": "4709395a-2282-ad9e-be61-c7438b640c0a",
+			"headers": "",
+			"headerData": [],
+			"url": "{{base_url}}/usuario",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"data": null,
+			"dataMode": "params",
+			"name": "{{key}}/cliente",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1526438114643,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"folder": "fc24ed8b-7ebd-ef83-1c43-de27031216c1",
+			"collection_id": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"isFromCollection": true,
+			"collectionRequestId": "4d1a0f08-16f3-f668-be33-b35934b21497"
+		},
+		{
+			"id": "4d1a0f08-16f3-f668-be33-b35934b21497",
+			"headers": "",
+			"headerData": [],
+			"url": "{{base_url}}/usuario",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"data": null,
+			"dataMode": "params",
+			"name": "{{base_url}}/usuario",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1526438114643,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "be9c45fc-8dc4-c983-66b7-e3d78c9b9307",
+			"collection_id": "e4997c29-73fc-cc68-eb57-fe0729cfe88c"
+		},
+		{
+			"id": "4ff02024-16b4-a41c-b06b-71e6a0c7a456",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/estabelecimento",
+			"folder": "8463033a-8d9b-34f7-3559-75c283a0c993",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526440254581,
+			"name": "/estabelecimento",
+			"description": "",
+			"collectionId": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"responses": [],
+			"rawModeData": "{\n  \"usu_id\":1,\n  \"est_token_reset_senha\":null,\n  \"est_nome\":\"Pizzaria\",\n  \"est_email\":\"pizzariadatataa@gmail.com\",\n  \"est_hashsenha\":\"uhbscoahbs\",\n  \"est_logo\":\"http://tata.com.br\",\n  \"est_cep\":\"69095187\",\n  \"est_bairro\":\"cidade nova\",\n  \"est_rua\":\"girua\",\n  \"est_numero\":\"2\",\n  \"est_complemento\":\"quadra304\",\n  \"est_dt_criacao\":\"2017-05-25T16:10:59.000Z\",\n  \"est_dt_ult_alteracao\":\"2017-05-25T16:10:59.000Z\",\n  \"est_ativo\":true\n}",
+			"collection_id": "e4997c29-73fc-cc68-eb57-fe0729cfe88c"
+		},
+		{
+			"id": "83cdb47e-0f88-1e3c-0f2c-803dd3a602a8",
+			"headers": "",
+			"headerData": [],
+			"url": "{{base_url}}/estabelecimento",
+			"folder": "8463033a-8d9b-34f7-3559-75c283a0c993",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526440260972,
+			"name": "/estabelecimento",
+			"description": "",
+			"collectionId": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"responses": [],
+			"collection_id": "e4997c29-73fc-cc68-eb57-fe0729cfe88c"
+		},
+		{
+			"id": "8b9cfa81-d3dc-e06c-4cd0-4eae56a2497b",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/{{key}}/usuario",
+			"folder": "fc24ed8b-7ebd-ef83-1c43-de27031216c1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526440605991,
+			"name": "/cliente",
+			"description": "",
+			"collectionId": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"responses": [],
+			"rawModeData": "{\n  \"cli_nome\":\"Neto barroncas\",\n  \"cli_email\":\"netobarroncassi@gmail.coml\",\n  \"cli_hashsenha\":\"lsasdasdaftsgrgfdxcvxc\",\n  \"cli_token_reset_senha\":\"\",\n  \"cli_dt_nascimento\":\"1994-10-07T00:00:00.000Z\",\n  \"cli_sexo\":\"masc\",\n  \"cli_dt_criacao\":null,\n  \"cli_dt_ult_alteracao\":null,\n  \"cli_ativo\":true\n}"
+		},
+		{
+			"id": "e0142616-a3d6-c0dc-56f3-0e9a743ccbde",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{base_url}}/usuario",
+			"folder": "be9c45fc-8dc4-c983-66b7-e3d78c9b9307",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526438719251,
+			"name": "/usuario",
+			"description": "",
+			"collectionId": "e4997c29-73fc-cc68-eb57-fe0729cfe88c",
+			"responses": [],
+			"rawModeData": "{ \n\t\"usu_nome\": \"Carlos\",\n\t\"usu_email\":\"carlosphbahia@gmail.com\",\n\t\"usu_hashsenha\":\"123456\"\n}",
+			"collection_id": "e4997c29-73fc-cc68-eb57-fe0729cfe88c"
+		}
+	]
+}

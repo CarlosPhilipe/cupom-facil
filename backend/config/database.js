@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 // coloque o nome da base / usuário/ senha da sua máquina
-const sequelize = new Sequelize('cupom_facil', 'root', 'root', {
+const sequelize = new Sequelize('cupom_facil', 'root', 'senha aqui', {
   host: 'localhost',
   dialect: 'mysql',
   pool: {

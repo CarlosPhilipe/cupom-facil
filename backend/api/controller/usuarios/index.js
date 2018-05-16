@@ -1,7 +1,7 @@
 // agrupa todas todos os recursos num único canto para a chamada
 var usuario = [];
 usuario.novo          = require("./novo.js");       // POST
-usuario.buscarTodos        = require("./buscarTodos.js");     // GET
+usuario.buscarTodos   = require("./buscarTodos.js");     // GET
 usuario.buscar        = require("./buscar.js");     // GET CIM ID
 usuario.alterar       = require("./alterar.js");    // PUT
 usuario.excluir       = require("./excluir.js");    // DELETE
